@@ -2,14 +2,14 @@ import React from "react";
 import Task from "./Task";
 import { useState } from "react";
 
-const Todolist = () => {
-  const defaultTask = [
-    {
-      title: "Grab some Pizza",
-      completed: false,
-    },
-  ];
+const defaultTask = [
+  {
+    title: "Grab some Pizza",
+    completed: false,
+  },
+];
 
+const Todolist = ({ name }) => {
   const [items, setItems] = useState(defaultTask);
   const [newItem, setNewItem] = useState("");
 
@@ -30,8 +30,8 @@ const Todolist = () => {
   };
 
   return (
-    <div className=" bg-black w-4/12 h-auto flex-row rounded-2xl text-white">
-      <h1 className="text-3xl p-5 text-center">TODO - ITEMS!</h1>
+    <div className=" bg-black w-3/12 h-auto flex-row rounded-2xl text-white">
+      <h1 className="text-3xl p-5 text-center">{name}</h1>
 
       <div className="m-15 p-10">
         <ul className="content-center">
@@ -61,8 +61,7 @@ const Todolist = () => {
           className="bg-yellow-100 text-black rounded-lg px-2 py-1 my-5"
           onClick={addTask}
         >
-          {" "}
-          Add new item
+          Add
         </button>
       </div>
     </div>
