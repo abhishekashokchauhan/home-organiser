@@ -3,7 +3,7 @@ import Todolist from "./component/Todolist";
 
 function App() {
   return (
-    <div className="h-screen w-full bg-yellow-400 flex items-center justify-center">
+    <div className="h-screen w-full pt-20 bg-yellow-400 flex items-baseline justify-start">
       <div className="p-2"></div>
       <Todolist name="Abhishek's To-Do!" />
       <div className="p-2"></div>

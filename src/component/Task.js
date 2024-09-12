@@ -2,10 +2,16 @@ import React from "react";
 
 const Task = ({ task, index, removeTask, completeTask }) => {
   return (
-    <div className="border-solid border m-3 p-1 flex justify-between">
-      <li className={task.completed ? "m-1 line-through" : "m-1"}>
-        {task.title}
-      </li>
+    <div className="grid grid-cols-[70%_30%]  gap-4 border-solid border p-1">
+      <div className="">
+        <li
+          className={
+            task.completed ? "m-1 line-through break-words" : "m-1 break-words"
+          }
+        >
+          {task.title}
+        </li>
+      </div>
       <div className="flex">
         <img
           onClick={() => completeTask(index)}

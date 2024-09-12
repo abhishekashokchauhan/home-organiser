@@ -41,10 +41,10 @@ const Todolist = ({ name }) => {
   };
 
   return (
-    <div className=" bg-black w-3/12 h-auto flex-row rounded-2xl text-white">
-      <h1 className="text-3xl p-5 text-center">{name}</h1>
+    <div className="p-5 bg-black w-3/12 h-auto flex-row rounded-2xl text-white">
+      <h1 className="text-3xl mb-5 text-center">{name}</h1>
 
-      <div className="m-15 p-10">
+      <div>
         <ul className="content-center">
           {items.map((task, index) => (
             <Task
@@ -58,9 +58,9 @@ const Todolist = ({ name }) => {
         </ul>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-between mb-3">
         <input
-          className="text-black my-5 mx-2 py-1 rounded-lg border-blue-500"
+          className="text-black py-1 rounded-lg border-blue-500"
           type="text"
           placeholder=" Add new item here"
           value={newItem}
