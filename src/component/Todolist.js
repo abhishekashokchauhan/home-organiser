@@ -1,6 +1,6 @@
 import React from "react";
 import Task from "./Task";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const defaultTask = [
   {
@@ -12,6 +12,17 @@ const defaultTask = [
 const Todolist = ({ name }) => {
   const [items, setItems] = useState(defaultTask);
   const [newItem, setNewItem] = useState("");
+
+  // Load todos from localStorage when the component mounts
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem(name)) || [];
+    setItems(savedTodos);
+  }, []);
+
+  // Save todos to localStorage whenever the todos state changes
+  useEffect(() => {
+    localStorage.setItem(name, JSON.stringify(items));
+  }, [items]);
 
   const addTask = () => {
     setItems([...items, { title: newItem, completed: false }]);
