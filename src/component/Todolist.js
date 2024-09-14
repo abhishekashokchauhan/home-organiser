@@ -38,9 +38,9 @@ const Todolist = ({ name }) => {
     }
   };
 
-  const completeTask = (index) => {
+  const toggleTaskStatus = (index) => {
     const newTasks = [...items];
-    newTasks[index].completed = true;
+    newTasks[index].completed = !newTasks[index].completed;
     setItems(newTasks);
   };
 
@@ -61,7 +61,7 @@ const Todolist = ({ name }) => {
               task={task}
               key={index}
               index={index}
-              completeTask={completeTask}
+              toggleTaskStatus={toggleTaskStatus}
               removeTask={removeTask}
             />
           ))}
@@ -70,7 +70,7 @@ const Todolist = ({ name }) => {
 
       <div className="flex items-center justify-between mb-3">
         <input
-          className="text-black py-1 rounded-lg border-blue-500"
+          className="text-black py-1 px-2 rounded-lg border-blue-500"
           type="text"
           placeholder=" Add new item here"
           onKeyDown={handleKeyDown}
