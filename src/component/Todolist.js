@@ -26,6 +26,16 @@ const Todolist = ({ name }) => {
 
   const addTask = () => {
     setItems([...items, { title: newItem, completed: false }]);
+    setNewItem("");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (newItem.trim() !== "") {
+        addTask();
+      }
+    }
   };
 
   const completeTask = (index) => {
@@ -63,6 +73,7 @@ const Todolist = ({ name }) => {
           className="text-black py-1 rounded-lg border-blue-500"
           type="text"
           placeholder=" Add new item here"
+          onKeyDown={handleKeyDown}
           value={newItem}
           onChange={(e) => {
             setNewItem(e.target.value);
