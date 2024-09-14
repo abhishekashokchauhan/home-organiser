@@ -51,7 +51,7 @@ const Todolist = ({ name }) => {
   };
 
   return (
-    <div className="p-5 bg-black w-3/12 h-auto flex-row rounded-2xl text-white">
+    <div className="p-5 bg-black h-auto flex-row rounded-2xl text-white">
       <h1 className="text-3xl mb-5 text-center">{name}</h1>
 
       <div>
@@ -70,9 +70,9 @@ const Todolist = ({ name }) => {
 
       <div className="flex items-center justify-between mb-3">
         <input
-          className="text-black py-1 px-2 rounded-lg border-blue-500"
+          className="text-black py-1 px-2 rounded-lg border-blue-500 input-width"
           type="text"
-          placeholder=" Add new item here"
+          placeholder="Add new item here"
           onKeyDown={handleKeyDown}
           value={newItem}
           onChange={(e) => {

@@ -2,3 +2,14 @@
     height: 17em;
     overflow: scroll;
 }
+
+.input-width {
+    width: -webkit-fill-available;
+    margin-right: 8px;
+}
+
+@media screen and (max-width: 356px) {
+    .year-breakline {
+      display: block; /* Forces the year to break into a new line */
+    }
+  }
