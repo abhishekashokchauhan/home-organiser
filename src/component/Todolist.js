@@ -55,7 +55,7 @@ const Todolist = ({ name }) => {
       <h1 className="text-3xl mb-5 text-center">{name}</h1>
 
       <div>
-        <ul className="content-center">
+        <ul className="container-height">
           {items.map((task, index) => (
             <Task
               task={task}
