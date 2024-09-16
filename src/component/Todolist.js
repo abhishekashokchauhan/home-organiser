@@ -25,8 +25,10 @@ const Todolist = ({ name }) => {
   }, [items]);
 
   const addTask = () => {
-    setItems([...items, { title: newItem, completed: false }]);
-    setNewItem("");
+    if (newItem.trim() !== "") {
+      setItems([...items, { title: newItem, completed: false }]);
+      setNewItem("");
+    }
   };
 
   const handleKeyDown = (e) => {
